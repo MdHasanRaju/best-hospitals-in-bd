@@ -34,5 +34,17 @@
 		"name": "Birdem Hospital",
 		"img": "https://doctorguideonline.com/wp-content/uploads/2021/02/Birdem-General-Hospital-2-Doctor-List.jpg",
 		"desc": "Bangladesh Institute of Research and Rehabilitation in Diabetes, Endocrine and Metabolic Disorders, shortly Birdem is a comprehensive health care provider located in the city of Dhaka. It has a long history of serving people with diabetes, later establishing themselves as an all-round player."
+	},
+	{
+		"id": "7",
+		"name": "BSMMU Hospital",
+		"img": "https://s3.eu-north-1.amazonaws.com/images.free-apply.com/uni/gallery/lg/1005000025/72153b2dfbba9c523a9ca29ecdecb5e28c179547.jpg",
+		"desc": "Bangabandhu Sheikh Mujib Medical University, shorting BSMMU has this attached hospital which is located in Dhaka. This 10 storied building provides a casualty department, along with many specialized treatment centers.When it comes to deep research and the right solution, this is one of the first hospitals that comes to Bangladeshis’ minds."
+	},
+	{
+		"id": "8",
+		"name": "Bangladesh Eye Hospital",
+		"img": "https://varcampus.com/wp-content/uploads/2018/01/islamia-eye-hospital.jpg",
+		"desc": "Established in 2005, this specialized hospital focuses on eye care. It has a 10 storied building with many operation theaters and treatment facilities, providing cost effective solutions to ophthalmic patients.Eye problems have the potential to disturb regular activities of people of any age."
 	}
 ]

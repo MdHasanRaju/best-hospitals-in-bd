@@ -6,6 +6,10 @@ import Home from './components/Home/Home';
 import Header from './components/Header/Header';
 import Login from './components/Login/Login';
 import Footer from './components/Footer/Footer';
+import AboutUs from './components/AboutUs/AboutUs';
+import NotFound from './components/NotFound/NotFound';
+import Services from './components/Services/Services';
+import ContactUs from './components/ContactUs/ContactUs';
 
 function App() {
   return (
@@ -20,8 +24,20 @@ function App() {
           <Route path="/home">
             <Home></Home>
           </Route>
+          <Route path="/Services">
+            <Services></Services>
+          </Route>
           <Route path="/login">
             <Login></Login>
+          </Route>
+          <Route path="/about">
+            <AboutUs></AboutUs>
+          </Route>
+          <Route path="/contact">
+            <ContactUs></ContactUs>
+          </Route>
+          <Route path="*">
+            <NotFound></NotFound>
           </Route>
         </Switch>
         <Footer></Footer>
