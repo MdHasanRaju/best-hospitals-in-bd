@@ -10,10 +10,12 @@ import AboutUs from './components/AboutUs/AboutUs';
 import NotFound from './components/NotFound/NotFound';
 import Services from './components/Services/Services';
 import ContactUs from './components/ContactUs/ContactUs';
+import AuthProvider from './context/AuthProvider';
+import HospitalDetails from './components/HospitalDetails/HospitalDetails';
 
 function App() {
   return (
-    <div>
+    <AuthProvider>
       <Router>
         <Header></Header>
 
@@ -26,6 +28,9 @@ function App() {
           </Route>
           <Route path="/Services">
             <Services></Services>
+          </Route>
+          <Route path="/hospitaldetails/:hospitalId">
+            <HospitalDetails></HospitalDetails>
           </Route>
           <Route path="/login">
             <Login></Login>
@@ -42,7 +47,7 @@ function App() {
         </Switch>
         <Footer></Footer>
       </Router>
-    </div>
+    </AuthProvider>
   );
 }
 

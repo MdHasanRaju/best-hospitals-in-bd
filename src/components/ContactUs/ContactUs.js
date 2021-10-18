@@ -81,7 +81,7 @@ const ContactUs = () => {
 
               <div className="d-grid">
                 <button
-                  className="btn btn-primary btn-lg disabled"
+                  className="btn btn-danger btn-lg disabled"
                   id="submitButton"
                   type="submit"
                 >

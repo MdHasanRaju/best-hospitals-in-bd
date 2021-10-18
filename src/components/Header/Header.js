@@ -1,9 +1,13 @@
 import React from 'react';
 import { Button, Container, Form, FormControl, Nav, Navbar } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
+import useFirebase from '../../hooks/useFirebase';
 import logo from '../../images/logo.png';
 
 const Header = () => {
+  const {user, logOut} = useAuth();
+  console.log(user, logOut);
     return (
       <div className="">
         <Container>
@@ -16,24 +20,51 @@ const Header = () => {
                 style={{ maxHeight: "100px" }}
                 navbarScroll
               >
-                <NavLink className="me-2 d-inline-block text-decoration-none text-dark" to="/home">Home</NavLink>
-                <NavLink className="me-2 d-inline-block text-decoration-none text-dark" to="/services">Services</NavLink>
-                <NavLink className="me-2 d-inline-block text-decoration-none text-dark" to="/about">About Us</NavLink>
-                <NavLink className="me-2 d-inline-block text-decoration-none text-dark" to="/contact">Contact Us</NavLink>
+                <NavLink
+                  className="me-2 d-inline-block text-decoration-none text-dark"
+                  to="/home"
+                >
+                  Home
+                </NavLink>
+                <NavLink
+                  className="me-2 d-inline-block text-decoration-none text-dark"
+                  to="/services"
+                >
+                  Services
+                </NavLink>
+                <NavLink
+                  className="me-2 d-inline-block text-decoration-none text-dark"
+                  to="/about"
+                >
+                  About Us
+                </NavLink>
+                <NavLink
+                  className="me-2 d-inline-block text-decoration-none text-dark"
+                  to="/contact"
+                >
+                  Contact Us
+                </NavLink>
               </Nav>
               <Form className="d-flex ms-auto">
-                <FormControl
+                {/* <FormControl
                   type="search"
                   placeholder="Search"
                   className="mr-2"
                   aria-label="Search"
-                />
-               {/*  <Link>
-                  <Button>Log out</Button>
-                </Link> */}
-                <Link to="/login">
-                  <Button variant="outline-success">Login</Button>
-                </Link>
+                /> */}
+                <p className="pt-2 me-2 fw-bold">{user.displayName}</p>
+
+                {user?.email ? (
+                  <Link to="/home">
+                    <Button variant="outline-danger" onClick={logOut}>
+                      Log out
+                    </Button>
+                  </Link>
+                ) : (
+                  <Link to="/login">
+                    <Button variant="outline-success">Login</Button>
+                  </Link>
+                )}
               </Form>
             </Navbar.Collapse>
           </Navbar>
