@@ -26,20 +26,13 @@ const useFirebase = () => {
     const googleProvider = new GoogleAuthProvider();
 
     const signInUsingGoogle = () => {
-        signInWithPopup(auth, googleProvider)
-        .then(result => {
-            const user = result.user;
-            console.log(user)
-            setUser(user);
-        })
-        .catch(error => {
-            setError(error.message)
-            console.log(error.message)
-        })
+        return signInWithPopup(auth, googleProvider)
+        
     }
 
     const toggleLogin = (e) => {
         setIsLogin(e.target.checked);
+        setError("");
     }
 
     const handleNameChange = (e) => {
@@ -73,7 +66,7 @@ const useFirebase = () => {
             setError("");
         })
         .catch(error => {
-            setError(error.message)
+            setError("Password doesn't match.")
         })
     }
 
@@ -86,7 +79,7 @@ const useFirebase = () => {
             setUserName();
           })
           .catch((error) => {
-            setError(error.message);
+            setError("This Email has taken once, try with another one");
             console.log(error.message);
           });
     }
@@ -118,7 +111,9 @@ const useFirebase = () => {
 
     return {
         user,
+        setUser,
         error,
+        setError,
         isLogin,
         toggleLogin,
         signInUsingGoogle,

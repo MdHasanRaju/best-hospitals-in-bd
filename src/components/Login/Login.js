@@ -1,25 +1,46 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 import useFirebase from '../../hooks/useFirebase';
 
 const Login = () => {
-  const {user, error, isLogin, toggleLogin, signInUsingGoogle, handleRegistration, handleNameChange, handleEmailChange, handlePasswordChange} = useAuth();
+  const {user, error, isLogin, setUser, setError, toggleLogin, signInUsingGoogle, handleRegistration, handleNameChange, handleEmailChange, handlePasswordChange} = useAuth();
+
+  const location = useLocation();
+  const history = useHistory();
+  const redirect_uri = location?.state?.from ||"/home";
+
+  const handleGoogleLogin = () => {
+    signInUsingGoogle()
+      .then((result) => {
+        history.push(redirect_uri);
+        const user = result.user;
+        console.log(user);
+        setUser(user);
+      })
+      .catch((error) => {
+        setError(error.message);
+        console.log(error.message);
+      });
+  }
 
     return (
       <div className="">
         <div className="w-50 mx-auto">
           <h2>Please {isLogin ? "Login" : "Register"}</h2>
           <Form onSubmit={handleRegistration}>
-            {!isLogin && <Form.Group className="mb-3" controlId="formBasicText">
-              <Form.Label>Name</Form.Label>
-              <Form.Control
-                onBlur={handleNameChange}
-                type="text"
-                placeholder="Name"
-                required
-              />
-            </Form.Group>}
+            {!isLogin && (
+              <Form.Group className="mb-3" controlId="formBasicText">
+                <Form.Label>Name</Form.Label>
+                <Form.Control
+                  onBlur={handleNameChange}
+                  type="text"
+                  placeholder="Name"
+                  required
+                />
+              </Form.Group>
+            )}
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
@@ -58,7 +79,7 @@ const Login = () => {
           <p className="text-danger">{error}</p>
           <div>
             <hr />
-            <Button onClick={signInUsingGoogle}>Sing In With Google</Button>
+            <Button onClick={handleGoogleLogin}>Sing In With Google</Button>
           </div>
         </div>
       </div>
