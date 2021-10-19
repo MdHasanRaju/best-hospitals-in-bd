@@ -6,4 +6,6 @@ Check out the live site from here:-> https://best-hospitals-in-bangladesh.web.ap
 * Best Hospitals information in Bangladesh.
 * Hospitals Medical services and other instructions.
 * Hospitals exact location and their Details.
+* Pre-booking services for emergency patients.
+* Proper Medical support for all classes people.
 

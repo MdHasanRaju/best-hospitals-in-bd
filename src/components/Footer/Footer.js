@@ -1,10 +1,11 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import logo from '../../images/logo (1).png';
+import './Footer.css';
 
 const Footer = () => {
     return (
-      <div className="pt-5 pb-2">
+      <div className="pt-5 pb-2 footer text-light">
         <div className="container">
           <div className="row ">
             <div className="col-lg-3">

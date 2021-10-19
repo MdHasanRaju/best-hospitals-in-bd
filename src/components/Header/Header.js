@@ -10,9 +10,9 @@ const Header = () => {
   // console.log(user, logOut);
   
     return (
-      <div className="">
+      <div className="bg-dark">
         <Container>
-          <Navbar bg="light" expand="lg">
+          <Navbar bg="dark" expand="lg">
             <Navbar.Brand className="text-warning">BestHos.</Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
@@ -22,25 +22,25 @@ const Header = () => {
                 navbarScroll
               >
                 <NavLink
-                  className="me-2 d-inline-block text-decoration-none text-dark"
+                  className="me-2 d-inline-block text-decoration-none text-light"
                   to="/home"
                 >
                   Home
                 </NavLink>
                 <NavLink
-                  className="me-2 d-inline-block text-decoration-none text-dark"
+                  className="me-2 d-inline-block text-decoration-none text-light"
                   to="/services"
                 >
                   Services
                 </NavLink>
                 <NavLink
-                  className="me-2 d-inline-block text-decoration-none text-dark"
+                  className="me-2 d-inline-block text-decoration-none text-light"
                   to="/about"
                 >
                   About Us
                 </NavLink>
                 <NavLink
-                  className="me-2 d-inline-block text-decoration-none text-dark"
+                  className="me-2 d-inline-block text-decoration-none text-light"
                   to="/contact"
                 >
                   Contact Us
@@ -54,7 +54,7 @@ const Header = () => {
                   aria-label="Search"
                 /> */}
                 {name && <span>{name}</span>}
-                <p className="pt-2 me-2 fw-bold">{user.displayName}</p>
+                <p className="pt-2 me-2 fw-bold text-light">{user.displayName}</p>
 
                 {user?.email ? (
                   <Link to="/home">

@@ -14,7 +14,7 @@ const DefaultServices = () => {
     return (
       <div>
         <Container className="my-4">
-          <h2>This is Home Services: {services.length}</h2>
+          <h2 className="text-center">Total Services: {services.length}</h2>
 
           <Row xs={1} md={3} className="g-2">
             {services.map((service) => (

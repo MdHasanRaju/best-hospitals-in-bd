@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Col } from 'react-bootstrap';
+import { Button, Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const SingleService = ({service}) => {
@@ -9,7 +9,7 @@ const SingleService = ({service}) => {
     return (
       <div>
         <Col>
-          <Card>
+          <Card className="">
             <Card.Img style={{height:"300px"}} className="w-100 " variant="top" src={img} />
             <Card.Body>
               <Card.Title>{name}</Card.Title>
@@ -17,7 +17,7 @@ const SingleService = ({service}) => {
             </Card.Body>
             <Card.Footer>
               <Link to={`/hospitaldetails/${id}`}>
-                <small className="">See Details</small>
+                <Button className="text-warning fw-bolder">Get Info</Button>
               </Link>
             </Card.Footer>
           </Card>
