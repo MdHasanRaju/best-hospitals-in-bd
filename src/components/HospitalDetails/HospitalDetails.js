@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Container } from 'react-bootstrap';
 import { useParams } from 'react-router';
+import { Link } from "react-router-dom";
 
 const HospitalDetails = () => {
     const {hospitalId} = useParams();
@@ -26,7 +27,7 @@ const HospitalDetails = () => {
             <Card.Text>
               {service.desc}
             </Card.Text>
-            <Card.Text>Last updated 3 mins ago</Card.Text>
+            <Card.Text> <Link to="/home">Go Home</Link> </Card.Text>
           </Card.ImgOverlay>
         </Card>
       </Container>

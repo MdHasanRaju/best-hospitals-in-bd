@@ -7,7 +7,8 @@ import logo from '../../images/logo.png';
 
 const Header = () => {
   const {user, logOut} = useAuth();
-  console.log(user, logOut);
+  // console.log(user, logOut);
+  
     return (
       <div className="">
         <Container>
