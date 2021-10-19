@@ -8,6 +8,7 @@ import {
   signOut,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 
 
@@ -41,9 +42,13 @@ const useFirebase = () => {
         setIsLogin(e.target.checked);
     }
 
+    const handleNameChange = (e) => {
+        setName(e.target.value);
+        console.log(e.target.value);
+    }
+
     const handleEmailChange = (e) => {
       setEmail(e.target.value);
-      
     };
 
     const handlePasswordChange = (e) => {
@@ -57,16 +62,38 @@ const useFirebase = () => {
         if (password?.length <5) {
             return setError("Password should be at least 6 characters");
         }
+        isLogin ? processLogin(email, password): RegisterNewUser(email, password);
+    }
+
+    const processLogin = (email, password) => {
+        signInWithEmailAndPassword(auth, email, password)
+        .then(result => {
+            setUser(result.user);
+            console.log(result.user);
+            setError("");
+        })
+        .catch(error => {
+            setError(error.message)
+        })
+    }
+
+    const RegisterNewUser = (email, password) => {
         createUserWithEmailAndPassword(auth, email, password)
           .then((result) => {
-              setUser(result.user)
-              console.log(result.user)
-              setError("");
+            setUser(result.user);
+            console.log(result.user);
+            setError("");
+            setUserName();
           })
           .catch((error) => {
-            setError(error.message)
-            console.log(error.message)
+            setError(error.message);
+            console.log(error.message);
           });
+    }
+
+    const setUserName = () => {
+        updateProfile(auth.currentUser, {displayName:name})
+        .then(result => {})
     }
 
     useEffect( () => {
@@ -95,6 +122,7 @@ const useFirebase = () => {
         isLogin,
         toggleLogin,
         signInUsingGoogle,
+        handleNameChange,
         handleEmailChange,
         handlePasswordChange,
         handleRegistration,

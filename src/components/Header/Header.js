@@ -6,7 +6,7 @@ import useFirebase from '../../hooks/useFirebase';
 import logo from '../../images/logo.png';
 
 const Header = () => {
-  const {user, logOut} = useAuth();
+  const {user, name, logOut} = useAuth();
   // console.log(user, logOut);
   
     return (
