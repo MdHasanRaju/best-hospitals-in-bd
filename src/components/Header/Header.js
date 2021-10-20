@@ -6,9 +6,8 @@ import useFirebase from '../../hooks/useFirebase';
 import logo from '../../images/logo.png';
 
 const Header = () => {
-  const {user, name, error, setError, logOut} = useAuth();
-  // console.log(user, logOut);
-  
+  const {user, name, logOut} = useAuth();
+
     return (
       <div className="bg-dark">
         <Container>
@@ -47,12 +46,6 @@ const Header = () => {
                 </NavLink>
               </Nav>
               <Form className="d-flex ms-auto">
-                {/* <FormControl
-                  type="search"
-                  placeholder="Search"
-                  className="mr-2"
-                  aria-label="Search"
-                /> */}
                 {name && <span>{name}</span>}
                 <p className="pt-2 me-2 fw-bold text-light">{user.displayName}</p>
 

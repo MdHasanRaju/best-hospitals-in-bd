@@ -21,12 +21,14 @@ const useFirebase = () => {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const [isLogin, setIsLogin] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
 
     const signInUsingGoogle = () => {
-        return signInWithPopup(auth, googleProvider)
+      setIsLoading(true)      
+      return signInWithPopup(auth, googleProvider)
         
     }
 
@@ -37,7 +39,6 @@ const useFirebase = () => {
 
     const handleNameChange = (e) => {
         setName(e.target.value);
-        console.log(e.target.value);
     }
 
     const handleEmailChange = (e) => {
@@ -50,7 +51,6 @@ const useFirebase = () => {
 
     const handleRegistration = (e) => {
         e.preventDefault();
-        console.log(email, password)
         if (password?.length <5) {
             return setError("Password should be at least 6 characters");
         }
@@ -61,7 +61,6 @@ const useFirebase = () => {
         signInWithEmailAndPassword(auth, email, password)
         .then(result => {
             setUser(result.user);
-            console.log(result.user);
             setError("");
         })
         .catch(error => {
@@ -76,7 +75,6 @@ const useFirebase = () => {
         createUserWithEmailAndPassword(auth, email, password)
           .then((result) => {
             setUser(result.user);
-            console.log(result.user);
             setError("");
             setUserName();
           })
@@ -102,15 +100,18 @@ const useFirebase = () => {
           else {
             setUser({})
           }
+          setIsLoading(false)
         });
 
     }, [])
 
     const logOut = () => {
+      setIsLoading(true)
         signOut(auth)
           .then(() => {
               setUser({})
           })
+          .finally(() => setIsLoading(false))
     }
 
     return {
@@ -119,6 +120,7 @@ const useFirebase = () => {
         error,
         setError,
         isLogin,
+        isLoading,
         toggleLogin,
         signInUsingGoogle,
         handleNameChange,
@@ -126,6 +128,7 @@ const useFirebase = () => {
         handlePasswordChange,
         handleRegistration,
         processLogin,
+        setIsLoading,
         logOut
     }
 };

@@ -5,7 +5,8 @@ import useAuth from '../../hooks/useAuth';
 import useFirebase from '../../hooks/useFirebase';
 
 const Login = () => {
-  const {user, error, isLogin, setUser, setError, toggleLogin, signInUsingGoogle, handleRegistration, handleNameChange, handleEmailChange, handlePasswordChange, processLogin} = useAuth();
+  const {user, error, isLogin, setUser, setError, toggleLogin, signInUsingGoogle, handleRegistration, handleNameChange, handleEmailChange, handlePasswordChange, setIsLoading} = useAuth();
+
 
   const location = useLocation();
   const history = useHistory();
@@ -16,13 +17,13 @@ const Login = () => {
       .then((result) => {
         history.push(redirect_uri);
         const user = result.user;
-        console.log(user);
+        user && alert("Google Sign In Successfully done");
         setUser(user);
       })
       .catch((error) => {
         setError(error.message);
-        console.log(error.message);
-      });
+      })
+      .finally(() => setIsLoading(false))
   }
 
 

@@ -3,10 +3,11 @@ import "./Feature.css";
 import { Col, Container, Row } from "react-bootstrap";
 
 const Feature = () => {
+  
   return (
     <Container>
-    <Row className="text-center mt-4">
-      <h2 className="text-info">Our Features</h2>
+    <Row className="text-center my-5">
+      <h2 className="text-info fw-bolder">Our Features</h2>
     </Row>
       <Row className="py-5 text-center">
         <Col className="feature-Item" md={3}>
@@ -19,7 +20,7 @@ const Feature = () => {
           <span>
             <i class="fas fa-user-md"></i>
           </span>
-          <p>Experianced Doctors</p>
+          <p>Experienced Doctors</p>
         </Col>
         <Col className="feature-Item" md={3}>
           <span>

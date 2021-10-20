@@ -13,8 +13,8 @@ const DefaultServices = () => {
 
     return (
       <div>
-        <Container className="my-4">
-          <h2 className="text-center">Total Services: {services.length}</h2>
+        <Container className="my-5">
+          <h2 className="text-center text-info fw-bolder">Services</h2>
 
           <Row xs={1} md={3} className="g-2">
             {services.map((service) => (

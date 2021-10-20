@@ -21,7 +21,7 @@ const DefaultService = ({service}) => {
             </Card.Body>
             <Card.Footer>
               <Link to={`/hospitaldetails/${id}`}>
-                <Button className="text-warning fw-bolder">Get Info</Button>
+                <Button className="text-light border-0 bg-danger">Get Info</Button>
               </Link>
             </Card.Footer>
           </Card>
