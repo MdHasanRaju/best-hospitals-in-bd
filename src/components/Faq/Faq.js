@@ -27,7 +27,7 @@ const Faq = () => {
                   visit the doctor.
                 </Accordion.Body>
               </Accordion.Item>
-              <Accordion.Item eventKey="0">
+              <Accordion.Item eventKey="1">
                 <Accordion.Header>
                   Where and when is Ask a Doctor available?
                 </Accordion.Header>
@@ -39,7 +39,7 @@ const Faq = () => {
                   mobile devices or Google Play store for Android devices.
                 </Accordion.Body>
               </Accordion.Item>
-              <Accordion.Item eventKey="1">
+              <Accordion.Item eventKey="2">
                 <Accordion.Header>
                   Who is eligible for Ask a Doctor?
                 </Accordion.Header>
@@ -48,6 +48,18 @@ const Faq = () => {
                   birthdate. Also, don’t hesitate to inform the healthcare
                   professional if you think he or she has confused you with
                   another <person className=""></person>
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item eventKey="3">
+                <Accordion.Header>
+                  How is the Emergency Department staffed?
+                </Accordion.Header>
+                <Accordion.Body>
+                  The department is staffed with emergency medicine physicians
+                  and nurses, physician assistants, technicians, CNAs and unit
+                  coordinators along with specialists from the laboratory,
+                  cardiology, respiratory and radiology departments.
+                  <person className=""></person>
                 </Accordion.Body>
               </Accordion.Item>
             </Accordion>

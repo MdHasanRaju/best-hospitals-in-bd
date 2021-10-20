@@ -13,7 +13,7 @@ const Header = () => {
       <div className="bg-dark">
         <Container>
           <Navbar bg="dark" expand="lg">
-            <Navbar.Brand className="text-warning">BestHos.</Navbar.Brand>
+            <Navbar.Brand className="text-danger">BestHos.</Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
               <Nav

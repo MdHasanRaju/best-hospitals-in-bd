@@ -5,7 +5,7 @@ import useAuth from '../../hooks/useAuth';
 import useFirebase from '../../hooks/useFirebase';
 
 const Login = () => {
-  const {user, error, isLogin, setUser, setError, toggleLogin, signInUsingGoogle, handleRegistration, handleNameChange, handleEmailChange, handlePasswordChange} = useAuth();
+  const {user, error, isLogin, setUser, setError, toggleLogin, signInUsingGoogle, handleRegistration, handleNameChange, handleEmailChange, handlePasswordChange, processLogin} = useAuth();
 
   const location = useLocation();
   const history = useHistory();
@@ -25,8 +25,9 @@ const Login = () => {
       });
   }
 
+
     return (
-      <div className="">
+      <div className="my-4">
         <div className="w-50 mx-auto">
           <h2>Please {isLogin ? "Login" : "Register"}</h2>
           <Form onSubmit={handleRegistration}>

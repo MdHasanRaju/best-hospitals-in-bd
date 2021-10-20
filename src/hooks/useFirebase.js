@@ -48,7 +48,6 @@ const useFirebase = () => {
       setPassword(e.target.value);
     };
 
-
     const handleRegistration = (e) => {
         e.preventDefault();
         console.log(email, password)
@@ -66,7 +65,10 @@ const useFirebase = () => {
             setError("");
         })
         .catch(error => {
-            setError("Password doesn't match.")
+            setError("Password doesn't match.");
+            setTimeout(() => {
+              setError("")
+            }, 5000);
         })
     }
 
@@ -80,7 +82,9 @@ const useFirebase = () => {
           })
           .catch((error) => {
             setError("This Email has taken once, try with another one");
-            console.log(error.message);
+            setTimeout(() => {
+              setError("")
+            }, 5000);
           });
     }
 
@@ -121,6 +125,7 @@ const useFirebase = () => {
         handleEmailChange,
         handlePasswordChange,
         handleRegistration,
+        processLogin,
         logOut
     }
 };

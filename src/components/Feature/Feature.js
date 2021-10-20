@@ -6,7 +6,7 @@ const Feature = () => {
   return (
     <Container>
     <Row className="text-center mt-4">
-      <h2>Our Features</h2>
+      <h2 className="text-info">Our Features</h2>
     </Row>
       <Row className="py-5 text-center">
         <Col className="feature-Item" md={3}>

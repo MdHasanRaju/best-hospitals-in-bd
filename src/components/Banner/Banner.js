@@ -6,7 +6,7 @@ const Banner = () => {
     return (
       <div className="banner">
         <div className=" d-flex justify-content-center align-item-center">
-          <div>
+          <div className="ms-2">
             <h4 className="text-light">Life & Care</h4>
             <h1 className="text-light">
               Find <span className="text-info fw-bold">The Best</span> Hospital
