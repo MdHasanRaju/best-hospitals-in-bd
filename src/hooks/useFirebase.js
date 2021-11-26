@@ -54,6 +54,7 @@ const useFirebase = () => {
         if (password?.length <5) {
             return setError("Password should be at least 6 characters");
         }
+
         isLogin ? processLogin(email, password): RegisterNewUser(email, password);
     }
 
@@ -71,6 +72,7 @@ const useFirebase = () => {
         })
     }
 
+    
     const RegisterNewUser = (email, password) => {
         createUserWithEmailAndPassword(auth, email, password)
           .then((result) => {
@@ -85,6 +87,7 @@ const useFirebase = () => {
             }, 5000);
           });
     }
+
 
     const setUserName = () => {
         updateProfile(auth.currentUser, {displayName:name})
@@ -129,7 +132,7 @@ const useFirebase = () => {
         handleRegistration,
         processLogin,
         setIsLoading,
-        logOut
+        logOut,
     }
 };
 
