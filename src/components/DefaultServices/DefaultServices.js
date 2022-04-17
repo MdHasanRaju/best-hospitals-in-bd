@@ -20,7 +20,7 @@ const DefaultServices = () => {
     <div>
       <Container className="my-5">
         <h2 style={{ color: "#2e279d"}} className="text-center fw-bolder mb-3">
-          SERVICES
+          HOSPITALS
         </h2>
         {isLoading ? <div className="d-flex justify-content-center"><Spinner animation="grow" variant="primary" /></div> : 
         (

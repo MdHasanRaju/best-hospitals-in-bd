@@ -43,7 +43,7 @@ const Header = () => {
                   className="me-2 d-inline-block text-decoration-none "
                   to="/services"
                 >
-                  Services
+                  Hospitals
                 </NavLink>
                 <NavLink
                 style={{color:"#2e279d"}}
