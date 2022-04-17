@@ -1,18 +1,19 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import logo from '../../images/logo (1).png';
+import logo2 from '../../images/hoslogo2.png';
 import './Footer.css';
 
 const Footer = () => {
     return (
-      <div className="pt-5 pb-2 footer text-light">
+      <div className="pt-5 pb-2 footer text-light mt-4">
         <div className="container">
           <div className="row ">
             <div className="col-lg-3">
               <div>
-                <img src={logo} />
+                <img src={logo2} />
               </div>
-              <p>
+              <p className='mt-2'>
                 It is a long established fact that a reader will be distracted
                 by the readable.
               </p>

@@ -6,7 +6,7 @@ const Faq = () => {
       <Container>
         <Row className="py-5">
           <Col md={4}>
-            <h2>What is Ask a Doctor, Secure Messaging?</h2>
+            <h2>What is <span style={{color:"#2e279d"}}>Ask a Doctor</span>, Secure Messaging?</h2>
             <p>
               Ask a Doctor, Secure Messaging (“Ask a Doctor”) is a chat-based
               virtual care program that allows you to securely text, send

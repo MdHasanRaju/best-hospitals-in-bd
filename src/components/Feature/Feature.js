@@ -5,9 +5,9 @@ import { Col, Container, Row } from "react-bootstrap";
 const Feature = () => {
   
   return (
-    <Container>
-    <Row className="text-center my-5">
-      <h2 className="text-info fw-bolder">Our Features</h2>
+    <Container className='my-5'>
+    <Row className="text-center py-4">
+      <h2 style={{color:"#2e279d"}}className="fw-bolder">OUR FEATURES</h2>
     </Row>
       <Row className="py-5 text-center">
         <Col className="feature-Item" md={3}>

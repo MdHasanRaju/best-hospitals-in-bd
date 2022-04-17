@@ -80,8 +80,8 @@ const ContactUs = () => {
               </div>
 
               <div className="d-grid">
-                <button
-                  className="btn btn-danger btn-lg disabled"
+                <button style={{backgroundColor:"#2e279d"}}
+                  className="btn text-white btn-lg disabled"
                   id="submitButton"
                   type="submit"
                 >

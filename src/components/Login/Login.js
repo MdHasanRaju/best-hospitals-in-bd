@@ -73,7 +73,7 @@ const Login = () => {
                 label="Already Registered?"
               />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button style={{background:"#2e279d"}} type="submit">
               {isLogin ? "Login" : "Register"}
             </Button>
           </Form>
@@ -81,7 +81,7 @@ const Login = () => {
           <p className="text-danger">{error}</p>
           <div>
             <hr />
-            <Button onClick={handleGoogleLogin}>Sing In With Google</Button>
+            <Button style={{background:"#2e279d"}} onClick={handleGoogleLogin}>Sing In With Google</Button>
           </div>
         </div>
       </div>

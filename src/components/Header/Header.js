@@ -3,16 +3,27 @@ import { Button, Container, Form, FormControl, Nav, Navbar } from 'react-bootstr
 import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import useFirebase from '../../hooks/useFirebase';
-import logo from '../../images/logo.png';
+import logo from './../../images/hoslogo.png';
+import logo2 from './../../images/hoslogo2.png';
+import './Header.css';
 
 const Header = () => {
   const {user, name, logOut} = useAuth();
 
+  const myColor={
+    // color:'#2e279d',
+    backgroundColor:"white",
+    color:'#e83e8c!important',
+
+  }
+
     return (
-      <div className="bg-dark">
+      <div style={{backgroundColor:"#ffffff"}}>
         <Container>
-          <Navbar bg="dark" expand="lg">
-            <Navbar.Brand className="text-danger">BestHos.</Navbar.Brand>
+          <Navbar expand="lg">
+            <Navbar.Brand >
+              <img height='50px' width='50px' src={logo} alt="hospital" />
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
               <Nav
@@ -21,43 +32,47 @@ const Header = () => {
                 navbarScroll
               >
                 <NavLink
-                  className="me-2 d-inline-block text-decoration-none text-light"
+                  style={{color:"#2e279d"}}
+                  className="me-2 d-inline-block text-decoration-none"
                   to="/home"
                 >
                   Home
                 </NavLink>
                 <NavLink
-                  className="me-2 d-inline-block text-decoration-none text-light"
+                style={{color:"#2e279d"}}
+                  className="me-2 d-inline-block text-decoration-none "
                   to="/services"
                 >
                   Services
                 </NavLink>
                 <NavLink
-                  className="me-2 d-inline-block text-decoration-none text-light"
+                style={{color:"#2e279d"}}
+                  className="me-2 d-inline-block text-decoration-none "
                   to="/about"
                 >
                   About Us
                 </NavLink>
                 <NavLink
-                  className="me-2 d-inline-block text-decoration-none text-light"
+                style={{color:"#2e279d"}}
+                  className="me-2 d-inline-block text-decoration-none"
                   to="/contact"
                 >
                   Contact Us
                 </NavLink>
               </Nav>
-              <Form className="d-flex ms-auto">
+              <Form style={{color:"#2e279d"}} className="d-flex ms-auto">
                 {name && <span>{name}</span>}
-                <p className="pt-2 me-2 fw-bold text-light">{user.displayName}</p>
+                <p className="pt-2 me-2 fw-bold">{user.displayName}</p>
 
                 {user?.email ? (
                   <Link to="/home">
-                    <Button variant="outline-danger" onClick={logOut}>
+                    <Button className='common-btn btn-clr' onClick={logOut}>
                       Log out
                     </Button>
                   </Link>
                 ) : (
                   <Link to="/login">
-                    <Button variant="outline-success">Login</Button>
+                    <Button className='common-btn btn-clr'>Login</Button>
                   </Link>
                 )}
               </Form>

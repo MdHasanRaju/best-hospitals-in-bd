@@ -1,6 +1,8 @@
 .feature-Item span i{
     font-size: 32px;
     margin-bottom: 5px;
+    /* color: #2e279d; */
+    color: #6055f6;
 }
 
 .feature-Item p{
