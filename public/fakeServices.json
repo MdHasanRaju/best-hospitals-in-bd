@@ -2,49 +2,49 @@
 	{
 		"id": "1",
 		"name": "Square Hospital",
-		"img": "https://www.yourarticlelibrary.com/wp-content/uploads/2014/04/14929956.jpg",
+		"img": "https://i.ibb.co/TcrVZtf/2.jpg",
 		"desc": "Located in the middle of Dhaka, this hospital serves patients with number of foreign institutes which work efficiently. It is spread across 18 stories with around 320 beds."
 	},
 	{
 		"id": "2",
 		"name": "Apollo Hospital",
-		"img": "https://www.yourarticlelibrary.com/wp-content/uploads/2014/04/4185396.jpg",
+		"img": "https://i.ibb.co/sRFrkV1/3.jpg",
 		"desc": "This hospital is a part of the famous global firm which runs Apollo hospitals in many countries. It is located in Dhaka and accredited by the world class JCI. It has the capacity to have 450 beds and provides medical services in many domains."
 	},
 	{
 		"id": "3",
 		"name": "Labaid Hospital",
-		"img": "https://www.yourarticlelibrary.com/wp-content/uploads/2014/04/Labaid-Hospital-Amar-Yellow.jpg",
+		"img": "https://i.ibb.co/BymJggz/01.jpg",
 		"desc": "One of the very famous hospitals run by the Labaid Group, this has created a revolution in cardiac treatment in Bangladesh. It is located in Dhaka with specialized facilities to treat various kinds of ailments."
 	},
 	{
 		"id": "4",
 		"name": "Ibn Sina Hospital",
-		"img": "https://media-eng.dhakatribune.com/uploads/2019/07/capture-1564482453624.JPG",
+		"img": "https://i.ibb.co/grM1hDQ/4.jpg",
 		"desc": "This hospital was established in the year 1983, in a small mode. Since then, it has grown to the current position providing medical services in many areas, using top class facilities.Specialty of this hospital is its service attitude which is well respected in Bangladesh as well as the neighboring countries."
 	},
 	{
 		"id": "5",
 		"name": "Popular Hospital",
-		"img": "https://www.yourarticlelibrary.com/wp-content/uploads/2014/04/Popular_Pharmaceuticals_Limited_Side_View_1.jpg",
+		"img": "https://i.ibb.co/NWgyv0K/9.webp",
 		"desc": "This is a hospital attached to the “Popular Medical College” in Dhaka. It has a dedicated treatment center as well as a world class lab.As the name suggests, this is a hospital for the masses and is able to handle the quantity with quality care. It focuses on both illness care as well as the wellness aspects, so that the recurring problems are avoided and the patients go away with a healthy"
 	},
 	{
 		"id": "6",
 		"name": "Birdem Hospital",
-		"img": "https://doctorguideonline.com/wp-content/uploads/2021/02/Birdem-General-Hospital-2-Doctor-List.jpg",
+		"img": "https://i.ibb.co/xGZMvCx/8.jpg",
 		"desc": "Bangladesh Institute of Research and Rehabilitation in Diabetes, Endocrine and Metabolic Disorders, shortly Birdem is located in the city of Dhaka."
 	},
 	{
 		"id": "7",
 		"name": "BSMMU Hospital",
-		"img": "https://s3.eu-north-1.amazonaws.com/images.free-apply.com/uni/gallery/lg/1005000025/72153b2dfbba9c523a9ca29ecdecb5e28c179547.jpg",
+		"img": "https://i.ibb.co/S7DYZBc/5.jpg",
 		"desc": "Bangabandhu Sheikh Mujib Medical University, shorting BSMMU has this attached hospital which is located in Dhaka. This 10 storied building provides a casualty department."
 	},
 	{
 		"id": "8",
-		"name": "Bangladesh Eye Hospital",
-		"img": "https://varcampus.com/wp-content/uploads/2018/01/islamia-eye-hospital.jpg",
+		"name": "Islamia Eye Hospital",
+		"img": "https://i.ibb.co/frPM8jm/7.jpg",
 		"desc": "Established in 2005, this hospital focuses on eye care. It has a 10 storied building with many operation theaters and treatment, providing effective solutions to have the potential to disturb regular activities of people of any age."
 	}
 ]

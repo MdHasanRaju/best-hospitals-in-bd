@@ -1,5 +1,5 @@
 import React from 'react';
-import { Spinner } from 'react-bootstrap';
+import { ProgressBar, Spinner } from 'react-bootstrap';
 import { Redirect, Route } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 
@@ -9,7 +9,7 @@ const PrivateRoute = ({children, ...rest}) => {
     if(isLoading) {
       return (
         <div className="text-center">
-          <Spinner animation="border" variant="danger" />
+          <Spinner animation='border' variant='primary' />
         </div>
       );
     }

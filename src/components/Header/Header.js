@@ -22,7 +22,7 @@ const Header = () => {
         <Container>
           <Navbar expand="lg">
             <Navbar.Brand >
-              <img height='50px' width='50px' src={logo} alt="hospital" />
+              <NavLink to='/'><img height='50px' width='50px' src={logo} alt="hospital" /></NavLink>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
@@ -62,7 +62,7 @@ const Header = () => {
               </Nav>
               <Form style={{color:"#2e279d"}} className="d-flex ms-auto">
                 {name && <span>{name}</span>}
-                <p className="pt-2 me-2 fw-bold">{user.displayName}</p>
+                <p className="pt-2 me-2 fw-bold">{user?.displayName}</p>
 
                 {user?.email ? (
                   <Link to="/home">

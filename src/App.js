@@ -1,18 +1,18 @@
-import './App.css';
+import "./App.css";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
-import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import Home from './components/Home/Home';
-import Header from './components/Header/Header';
-import Login from './components/Login/Login';
-import Footer from './components/Footer/Footer';
-import AboutUs from './components/AboutUs/AboutUs';
-import NotFound from './components/NotFound/NotFound';
-import Services from './components/Services/Services';
-import ContactUs from './components/ContactUs/ContactUs';
-import AuthProvider from './context/AuthProvider';
-import HospitalDetails from './components/HospitalDetails/HospitalDetails';
-import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./components/Home/Home";
+import Header from "./components/Header/Header";
+import Login from "./components/Login/Login";
+import Footer from "./components/Footer/Footer";
+import AboutUs from "./components/AboutUs/AboutUs";
+import NotFound from "./components/NotFound/NotFound";
+import Services from "./components/Services/Services";
+import ContactUs from "./components/ContactUs/ContactUs";
+import AuthProvider from "./context/AuthProvider";
+import HospitalDetails from "./components/HospitalDetails/HospitalDetails";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
