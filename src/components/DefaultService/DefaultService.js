@@ -10,14 +10,14 @@ const DefaultService = ({ service }) => {
       <Col>
         <Card>
           <Card.Img
-            style={{ height: "300px" }}
+            style={{ height: "250px" }}
             className="w-100"
             variant="top"
             src={img}
           />
           <Card.Body>
             <Card.Title>{name}</Card.Title>
-            <Card.Text>{desc.slice(0, 185)}...</Card.Text>
+            <Card.Text>{desc.slice(0, 150)}...</Card.Text>
           </Card.Body>
           <Card.Footer>
             <Link to={`/hospitaldetails/${id}`}>

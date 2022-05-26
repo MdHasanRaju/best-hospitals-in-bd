@@ -10,7 +10,7 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import { useHistory } from "react-router-dom";
+import { toast } from "react-toastify";
 
 initializeAuthentication();
 
@@ -18,12 +18,6 @@ const useFirebase = () => {
   const [user, setUser] = useState({});
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-  // const [name, setName] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
-  // const [isLogin, setIsLogin] = useState(false);
-
-  const history = useHistory();
 
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
@@ -38,18 +32,15 @@ const useFirebase = () => {
       })
       .catch((error) => {
         // An error occurred
-        // ...
       });
   };
 
-  const registrationWithEmailPassword = (name, email, password) => {
+  const registrationWithEmailPassword = (name, email, password, history) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
-        // const user = userCredential.user;
-        // Save User to database
-        // saveUser(email, name, "POST");
         registrationWithName(name);
+        history.push('/home');
       })
       .catch((error) => {
         // const errorCode = error.code;
@@ -57,6 +48,11 @@ const useFirebase = () => {
         setError(errorMessage);
         // ..
       });
+  };
+
+  const signInUsingEmailAndPassword = (email, password) => {
+    setIsLoading(true);
+    return signInWithEmailAndPassword(auth, email, password);
   };
 
   const signInUsingGoogle = () => {
@@ -83,9 +79,9 @@ const useFirebase = () => {
 
   // const handleRegistration = (e) => {
   //   e.preventDefault();
-  //   if (password?.length < 5) {
-  //     return setError("Password should be at least 6 characters");
-  //   }
+    // if (password?.length < 5) {
+    //   return setError("Password should be at least 6 characters");
+    // }
 
   //   isLogin ? processLogin(email, password) : RegisterNewUser(email, password);
   // };
@@ -135,11 +131,6 @@ const useFirebase = () => {
     });
   }, [auth]);
 
-  const signInUsingEmailAndPassword = (email, password) => {
-    setIsLoading(true);
-    return signInWithEmailAndPassword(auth, email, password);
-  };
-
   const logOut = () => {
     setIsLoading(true);
     signOut(auth)
@@ -156,16 +147,9 @@ const useFirebase = () => {
     setError,
     isLoading,
     setIsLoading,
-    // isLogin,
     signInUsingGoogle,
     registrationWithEmailPassword,
     signInUsingEmailAndPassword,
-    // toggleLogin,
-    // handleNameChange,
-    // handleEmailChange,
-    // handlePasswordChange,
-    // handleRegistration,
-    // processLogin,
     logOut,
   };
 };

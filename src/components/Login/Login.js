@@ -1,28 +1,13 @@
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { useHistory, useLocation } from "react-router";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import useAuth from "../../hooks/useAuth";
 import loginImg from "./../../images/login.png";
 
 const Login = () => {
-  // const {
-  //   error,
-  //   isLogin,
-  //   setUser,
-  //   setUserName,
-  //   setError,
-  //   toggleLogin,
-  //   signInUsingGoogle,
-  //   handleRegistration,
-  //   handleNameChange,
-  //   handleEmailChange,
-  //   handlePasswordChange,
-  //   setIsLoading,
-  // } = useAuth();
-
   const {
     user,
     setUser,
@@ -61,26 +46,27 @@ const Login = () => {
   };
 
   const handleLogin = () => {
-    signInUsingEmailAndPassword(email, password)
-      .then((result) => {
-        // Signed in
-        setError("");
-        toast.success("Login successfully!");
-        const user = result.user;
-        setUser(user);
-        setEmail("");
-        setPassword("");
-        history.push(redirect_uri);
-
-        // ...
-      })
-      .catch((error) => {
-        // const errorCode = error.code;
-        // const errorMessage = error.message;
-        setError(error.message);
-        setUser({});
-      })
-      .finally(() => setIsLoading(false));
+    if (password?.length >= 6) {
+      signInUsingEmailAndPassword(email, password)
+        .then((result) => {
+          // Signed in
+          setError("");
+          toast.success("Login successfully!");
+          const user = result.user;
+          setUser(user);
+          setEmail("");
+          setPassword("");
+          history.push(redirect_uri);
+        })
+        .catch((error) => {
+          setError(error.message);
+          setUser({});
+        })
+        .finally(() => setIsLoading(false));
+    }
+    else {
+      setError('Something went wrong!')
+    }
   };
 
   // google sing in handling
@@ -88,7 +74,7 @@ const Login = () => {
     signInUsingGoogle()
       .then((result) => {
         if (result) {
-          toast("Google Sign In Successfully done!",{ autoClose: 1500 });
+          toast("Google Sign In Successfully done!", { autoClose: 1500 });
           const user = result.user;
           setUser(user);
           history.push(redirect_uri);
@@ -96,17 +82,17 @@ const Login = () => {
       })
       .catch((error) => {
         setError(error.message);
-        toast.error('Something went wrong');
+        toast.error("Something went wrong");
       })
       .finally(() => setIsLoading(false));
   };
 
   return (
     <div className="my-4">
-      <div className="container">
-        <div className="row gy-2">
+      <Container>
+        <Row className="gy-2">
           <h2 className="text-center">Please Login</h2>
-          <div className="col-lg-6 col-md-6 col-sm-12">
+          <Col lg="6" md="6" xs="12" sm="12">
             <img
               style={{ my: "auto" }}
               width="100%"
@@ -114,8 +100,8 @@ const Login = () => {
               src={loginImg}
               alt="login.png"
             />
-          </div>
-          <div className="col-lg-6 col-md-6 col-sm-12">
+          </Col>
+          <Col lg="6" md="6" xs="12" sm="12">
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
@@ -163,7 +149,7 @@ const Login = () => {
             </Link>
             <p className="text-danger">{error}</p>
             <div>
-              {/* <hr /> */}
+              <hr />
               <Button
                 style={{ background: "#2e279d" }}
                 onClick={handleGoogleLogin}
@@ -172,7 +158,7 @@ const Login = () => {
               </Button>
               <ToastContainer />
             </div>
-          </div>
+          </Col>
 
           {/* <div className="col-lg-6 col-md-6 col-sm-12">
             <Form onSubmit={handleRegistration}>
@@ -236,8 +222,8 @@ const Login = () => {
               </Button>
             </div>
           </div> */}
-        </div>
-      </div>
+        </Row>
+      </Container>
     </div>
   );
 };

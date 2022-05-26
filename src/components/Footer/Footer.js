@@ -1,15 +1,14 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
-import logo from '../../images/logo (1).png';
+import { Button, Col, Container, Row } from 'react-bootstrap';
 import logo2 from '../../images/hoslogo2.png';
 import './Footer.css';
 
 const Footer = () => {
     return (
       <div className="pt-5 pb-2 footer text-light mt-4">
-        <div className="container">
-          <div className="row ">
-            <div className="col-lg-3">
+        <Container >
+          <Row className='g-1'>
+            <Col lg='3' md='6' xs='12'>
               <div>
                 <img src={logo2} />
               </div>
@@ -21,24 +20,24 @@ const Footer = () => {
               <i className="fab fa-instagram me-4 fs-4"></i>
               <i className="fab fa-linkedin-in me-4 fs-4"></i>
               <i className="fab fa-twitter me-2 fs-4"></i>
-            </div>
-            <div className="col-lg-3">
+            </Col>
+            <Col lg='3' md='6' xs='12'>
               <h5>Services</h5>
               <p>Therapiya</p>
               <p>Dentistry</p>
               <p>Virusology</p>
-              <p>Pharmocology</p>
+              <p>Pharmacology</p>
               <p>Cardiology</p>
-            </div>
-            <div className="col-lg-3">
+            </Col>
+            <Col lg='3' md='6' xs='12'>
               <h5>Useful Links</h5>
               <p>Home</p>
               <p>About Us</p>
               <p>News</p>
               <p>Doctors</p>
               <p>Contact Us</p>
-            </div>
-            <div className="col-lg-3">
+            </Col>
+            <Col lg='3' md='6' xs='12'>
               <h5>Subscribe</h5>
               <p>
                 <input className="w-100" type="text" placeholder="Email" />
@@ -47,8 +46,8 @@ const Footer = () => {
               <p className="mt-4">
                 Get The Latest Updates via email. Any time you may unsubscribe
               </p>
-            </div>
-          </div>
+            </Col>
+          </Row>
           <div>
             <hr className="text-secondary" />
             <div className="d-flex justify-content-between">
@@ -61,7 +60,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-        </div>
+        </Container>
       </div>
     );
 };

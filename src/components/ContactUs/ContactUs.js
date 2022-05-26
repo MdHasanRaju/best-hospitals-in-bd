@@ -1,13 +1,13 @@
 import React from 'react';
-import { Form } from 'react-bootstrap';
+import { Container, Form } from 'react-bootstrap';
 
 const ContactUs = () => {
     return (
       <div>
-        <div className="container py-4">
+        <Container className=" py-4">
           <div className="w-50 mx-auto">
           <h2 className="text-center">Contact Us</h2>
-            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+            <Form id="contactForm" data-sb-form-api-token="API_TOKEN">
               <div classNameName="mb-3">
                 <label className="form-label" for="name">
                   Name
@@ -88,9 +88,9 @@ const ContactUs = () => {
                   Submit
                 </button>
               </div>
-            </form>
+            </Form>
           </div>
-        </div>
+        </Container>
       </div>
     );
 };

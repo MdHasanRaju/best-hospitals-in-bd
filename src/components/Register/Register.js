@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { useHistory, Link } from "react-router-dom";
 import { useLocation } from "react-router";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import useAuth from "../../hooks/useAuth";
 import registerImg from "./../../images/sign.png";
 
@@ -61,23 +61,27 @@ const Register = () => {
       })
       .catch((error) => {
         setError(error.message);
-        toast.error('Something went wrong')
+        toast.error("Something went wrong");
       })
       .finally(() => setIsLoading(false));
   };
 
   const handleRegistration = () => {
-    registrationWithEmailPassword(name, email, password);
-    toast.success("Registration successfully done");
-    history.push("/home");
+    if (password?.length >= 6) {
+      registrationWithEmailPassword(name, email, password, history);
+      // history.push("/home");
+      toast('Registered successfully!', {autoClose:1000})
+    } else {
+      setError("Password should be at least 6 characters");
+    }
   };
 
   return (
     <div className="my-4">
-      <div className="container">
-        <div className="row gy-2">
+      <Container>
+        <Row className="gy-2">
           <h2 className="text-center">Please Register</h2>
-          <div className="col-lg-6 col-md-6 col-sm-12">
+          <Col lg="6" md="6" sm="12" xs="12">
             <img
               style={{ my: "auto" }}
               width="100%"
@@ -85,8 +89,8 @@ const Register = () => {
               src={registerImg}
               alt="register.png"
             />
-          </div>
-          <div className="col-lg-6 col-md-6 col-sm-12">
+          </Col>
+          <Col lg="6" md="6" sm="12" xs="12">
             {/* <form onSubmit={handleSubmit}>
             <input
               className="form-control"
@@ -171,7 +175,7 @@ const Register = () => {
               >
                 Register
               </Button>
-              {/* <ToastContainer/> */}
+              <ToastContainer />
             </Form>
             <br />
             <p className="text-danger">{error}</p>
@@ -188,9 +192,9 @@ const Register = () => {
               </Button>
               <ToastContainer />
             </div>
-          </div>
-        </div>
-      </div>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };
