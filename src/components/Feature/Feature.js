@@ -12,25 +12,25 @@ const Feature = () => {
       <Row className="py-5 text-center">
         <Col className="feature-Item" md={3}>
           <span>
-            <i class="fas fa-comment-medical"></i>
+            <i className="fas fa-comment-medical"></i>
           </span>
           <p>Online Support 24/7</p>
         </Col>
         <Col className="feature-Item" md={3}>
           <span>
-            <i class="fas fa-user-md"></i>
+            <i className="fas fa-user-md"></i>
           </span>
           <p>Experienced Doctors</p>
         </Col>
         <Col className="feature-Item" md={3}>
           <span>
-            <i class="fas fa-ambulance"></i>
+            <i className="fas fa-ambulance"></i>
           </span>
           <p>Emergency Ambulance</p>
         </Col>
         <Col className="feature-Item" md={3}>
           <span>
-            <i class="fas fa-hand-holding-medical"></i>
+            <i className="fas fa-hand-holding-medical"></i>
           </span>
           <p>Extra Care</p>
         </Col>

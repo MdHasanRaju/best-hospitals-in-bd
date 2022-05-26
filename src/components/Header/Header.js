@@ -11,7 +11,6 @@ const Header = () => {
   const {user, name, logOut} = useAuth();
 
   const myColor={
-    // color:'#2e279d',
     backgroundColor:"white",
     color:'#e83e8c!important',
 

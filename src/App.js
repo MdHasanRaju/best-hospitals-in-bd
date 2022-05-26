@@ -13,6 +13,8 @@ import ContactUs from "./components/ContactUs/ContactUs";
 import AuthProvider from "./context/AuthProvider";
 import HospitalDetails from "./components/HospitalDetails/HospitalDetails";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import Register from "./components/Register/Register";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -35,6 +37,9 @@ function App() {
           </PrivateRoute>
           <Route path="/login">
             <Login></Login>
+          </Route>
+          <Route path="/register">
+            <Register></Register>
           </Route>
           <Route path="/about">
             <AboutUs></AboutUs>

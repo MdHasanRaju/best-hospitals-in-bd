@@ -45,9 +45,9 @@ const Faq = () => {
                 </Accordion.Header>
                 <Accordion.Body>
                   Be sure the healthcare professional asks your name and
-                  birthdate. Also, don’t hesitate to inform the healthcare
+                  birth date. Also, don’t hesitate to inform the healthcare
                   professional if you think he or she has confused you with
-                  another <person className=""></person>
+                  another person.
                 </Accordion.Body>
               </Accordion.Item>
               <Accordion.Item eventKey="3">
@@ -59,7 +59,6 @@ const Faq = () => {
                   and nurses, physician assistants, technicians, CNAs and unit
                   coordinators along with specialists from the laboratory,
                   cardiology, respiratory and radiology departments.
-                  <person className=""></person>
                 </Accordion.Body>
               </Accordion.Item>
             </Accordion>
