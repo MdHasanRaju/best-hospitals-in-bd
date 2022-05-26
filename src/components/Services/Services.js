@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row, Spinner,Button } from "react-bootstrap";
+import { Container, Row, Spinner, Button } from "react-bootstrap";
 import SingleService from "../SingleService/SingleService";
 
 const Services = () => {
@@ -16,32 +16,36 @@ const Services = () => {
   }, []);
 
   return (
-    <Container className="my-4">
-      <h2 style={{ color: "#2e279d"}} className="text-center mb-4">
+    <div>
+      <h2 style={{ color: "#2e279d" }} className="text-center mb-4 mt-2">
         MORE HOSPITALS: {services.length}
       </h2>
-
-      {services.length ? (
-        <Row xs={1} md={3} className="g-2">
-          {services.map((service) => (
-            <SingleService key={service.id} service={service}></SingleService>
-          ))}
-        </Row>
-      ) : (
-        <div className="d-flex justify-content-center">
-          <Button style={{backgroundColor:"#2e279d", color:"dark"}} disabled>
-            <Spinner
-              as="span"
-              animation="grow"
-              size="sm"
-              role="status"
-              aria-hidden="true"
-            />
-            Loading...
-          </Button>
-        </div>
-      )}
-    </Container>
+      <Container className="my-4">
+        {services.length ? (
+          <Row lg={3} md={2} xs={1} sm={1} className="g-3">
+            {services?.map((service) => (
+              <SingleService key={service.id} service={service}></SingleService>
+            ))}
+          </Row>
+        ) : (
+          <div className="d-flex justify-content-center">
+            <Button
+              style={{ backgroundColor: "#2e279d", color: "dark" }}
+              disabled
+            >
+              <Spinner
+                as="span"
+                animation="grow"
+                size="sm"
+                role="status"
+                aria-hidden="true"
+              />
+              Loading...
+            </Button>
+          </div>
+        )}
+      </Container>
+    </div>
   );
 };
 

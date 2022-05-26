@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const SingleService = ({ service }) => {
   const { id, name, img, desc } = service;
+  // xs="12" md='6' lg='4'
 
   return (
     <Col>

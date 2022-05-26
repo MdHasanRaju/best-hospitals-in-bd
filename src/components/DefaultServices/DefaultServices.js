@@ -24,7 +24,7 @@ const DefaultServices = () => {
         </h2>
         {isLoading ? <div className="d-flex justify-content-center"><Spinner animation="grow" variant="primary" /></div> : 
         (
-          <Row xs={1} md={3} className="g-2">
+          <Row lg={3} md={2} xs={1} className="g-2">
             {services.map((service) => (
               <DefaultService
                 key={service.id}
