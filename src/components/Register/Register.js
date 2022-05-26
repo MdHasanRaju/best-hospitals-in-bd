@@ -69,10 +69,8 @@ const Register = () => {
   const handleRegistration = () => {
     if (password?.length >= 6) {
       registrationWithEmailPassword(name, email, password, history);
-      // history.push("/home");
-      toast('Registered successfully!', {autoClose:1000})
     } else {
-      setError("Password should be at least 6 characters");
+      setError("Password should be at least 6 characters and retype please.");
     }
   };
 
