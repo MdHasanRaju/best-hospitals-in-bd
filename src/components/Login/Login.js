@@ -145,7 +145,7 @@ const Login = () => {
             </Form>
             <br />
             <Link to="/register" className="text-dark text-decoration-none ">
-              Already Login? please register
+              New user? please register
             </Link>
             <p className="text-danger">{error}</p>
             <div>
