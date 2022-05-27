@@ -64,8 +64,8 @@ const Login = () => {
         })
         .finally(() => setIsLoading(false));
     }
-    else {
-      setError('Something went wrong!')
+    if(password.length < 6 ) {
+      setError('Passwords have to be at least 6 digits!')
     }
   };
 

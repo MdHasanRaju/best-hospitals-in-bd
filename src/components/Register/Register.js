@@ -70,7 +70,7 @@ const Register = () => {
     if (password?.length >= 6) {
       registrationWithEmailPassword(name, email, password, history);
     } else {
-      setError("Password should be at least 6 characters and retype please.");
+      setError("Password should be at least 6 characters and if don't work please retype.");
     }
   };
 
